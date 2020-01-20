@@ -17,15 +17,15 @@
                 <span class="text-danger">{{ error }}</span>
                 {% endfor %}
                 {% endif %}
-                <div class="card testimonial-card" style="background-color: #635A45;">
+                <div class="card testimonial-card" style="background-color: rgba(99, 90, 69, 0.224);">
                     <div class="card-up"></div>
-                    <div class="avatar mx-aut">
+                    <div class="avatar mx-aut" style="color: rgb(167, 164, 158);">
                             <img src="{{profile_pic_path}}" class="rounded-circle account-img mt-2" alt="Picture" style="width: 250px;height:250px;">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-right"><strong>{{ current_user.username | title }}</strong></h5>
+                        <h5 class="card-title text-right" style="color: rgb(167, 164, 158);" ><strong>{{ current_user.username | title }}</strong></h5>
                         <p class="text-right"><a href="/">{{ current_user.email }}</a></p>
-                        <p> {{ current_user.bio}} </p>
+                        <p style="color: rgb(167, 164, 158);" > {{ current_user.bio}} </p>
                         <button class="btn btn-default btn-sm" id="showform">Update Profile</button>
                     </div>
                 </div>
