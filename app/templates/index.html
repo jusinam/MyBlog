@@ -1,21 +1,91 @@
 {% extends 'base.html'%}
+{% block content %}
+<div class="container-fluid"  >
+  <div class="row">
+    <div class="col-md-2">
+    <div class="container">
+      <div class="sidenav">
+       <br> <br> <br> <br>
+        <div class="card" >
+            <div class="card text-center" style="widows: 100%;">
+              <div class="card-header  mr-2 ml-2">Random Quotes</div>
+              <div class="card-body" style="padding:1%;margin:0 auto;background-color:#dcdcdc;">
+                 <h5 class="card-text">{{quote.quote}}</h5>
+                <p class=""><strong style="fondt-style:italic;">Author :</strong> <small><span style="text-decoration:underline;font-size:13px;">{{quote.author}}</span> </small></p>
+                           
 
+              </div>
+            </div>
+          </div> <br> <br>
+          {% if current_user.is_authenticated %}
+                          <h2 class=" text-center "><a class="btn btn-default btn-sm" href="{{url_for('main.new_blog')}}">Post Blog</a></h2>
+                     {% endif %}
+      </div> </div>
+    </div>
+    <div class="col-md-10">
+      <div class="container">
+          <div class="main" id="landin">
+              
+              <div class="container landing">
+                  <div class="row ">
+                    
+                      <div class="col-md-10 text-center "><h2 style="color: white;">WELCOME TO QUOTES BLOG</h2></div>
+                  </div>
+          
+                  <div class="row">
+                      <div class="col-md-8 land">
+                        {% for blog in blogs.items %}
+                              <div class="container bg mb-2" style="color:white;">
+                                  <hr>
+                                  <div class="row ">
+                                      <div class="col-md-2 ">
+                                              <img class="rounded-circle blog-img mr-10" src="{{url_for('static', filename='photos/' + blog.user.profile_pic_path)}}" style="width: 80px;">
+                                      </div>
+                                      <div class="col-md-10 pr-4 d-justify userblog">
+                                          
+                                          <h4><a href="/">{{blog.title | title }}</a></h4>
+                                          <p>{{blog.content }}</p>
+                                          <p> <a class="btn btn-default btn-sm" disabled="disabled" href="{{url_for('main.blog',id=blog.id)}}">Comment {{blog.comment.count()}}</a> &nbsp;&nbsp;<span class="text-right"><strong>Posted by : </strong><small> {{blog.user.username}}</small>  &nbsp;<strong>On :</strong> <small>{{blog.posted.strftime('%d-%m-%Y')}}</small></span</p>
+                                          
+                                      </div>
+                                  </div> 
+                                  <hr>
+                              </div>
+                                 {% endfor %}
+                                 
+            
+                        </div>
+                        <div class="col-md-4">
+                            <div class="container">
+                                <div class="card quotecard text-center" style="padding:1%;margin:0 auto;background-color:#635A45;"> 
+                                    <div class="card-title">
+                                    <div >
+                                    <img  class="rounded-circle"style="height:50%;width:50%;margin-top:2%;" src="https://avatars3.githubusercontent.com/u/56109120?s=460&v=4">
+                                    <h3 class="text-center text-white">Evans Nyambane</h3>
+                                    <p><small><a href="/">evansonchagwa01@gmail.com</i></a></small></p>
+                                    </div>
+                                        
+                                    </div>
+                                    <p class="text-white">A good programmer is someone who always looks both ways before crossing a one-way street.</p>
+                                    <h5 class="card-text text-whit">Software Developer</h5>
+                                    <p class="text-center"><span><a href="https://github.com/DjCooGie" target="blank"><i class="fab fa-github fa-2x"></i></a></span> &nbsp; &nbsp;<span><a href="https://twitter.com/jusinamambo" target="blank"><i class="fab fa-twitter fa-2x"></i></a></span>&nbsp; &nbsp; <span><a href="https://www.instagram.com/" target="blank"><i class="fab fa-instagram fa-2x"></i></a></span></p>
+                                </div>
 
-{% block content%}
-<header class="masthead" style="background-image: url(https://images.wallpaperscraft.com/image/keyboard_backlight_red_136083_1280x720.jpg); background-size: cover; height: 100vh;">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="site-heading">
-            <span class="subheading"><i class="fas fa-quote-left"></i> <em>Welcome</em> <i class="fas fa-quote-right"></i></span>
-            <h2>Add your favorite quote</h2>
-        </div>
+                                
+                                
+                          </div>
+                          
+                      </div>
+                  </div>
+              </div>
+
+            </div>
       </div>
+     
+
     </div>
   </div>
- </header>
-
+</div>
 
 
 {% endblock %}
