@@ -29,26 +29,6 @@ def new_blog():
         blog.save_blog()
         return redirect(url_for('main.index'))
     return render_template('new_blog.html',form = form)
-    
-@main.route('/blog/<blog_id>/update',methods=['GET','POST'])
-@login_required
-def updateblog(blog_id):
-    blog = Blog.query.get(blog_id)
-    if blog.user != current_user:
-        abort(404)
-    form = CreateBlog()
-    if form.validate_on_submit():
-        blog.title = form.title.data
-        blog.content = form.content.data
-        db.session.commit()
-        flash('You have updated your Blog')
-        return redirect(url_for('main.index',id=blog_id))
-    if request.method == 'GET':
-        form.title.data = blog.title
-        form.content.data = blog.content
-    return render_template('new_blog.html',form = form)
-    
-
 
 @main.route('/blog/<id>')
 def blog(id):
@@ -126,3 +106,21 @@ def save_pic(form_picture):
     i.thumbnail(output_size)
     i.save(picture_path)
     return picture_filename
+
+@main.route('/blog/<blog_id>/update',methods=['GET','POST'])
+@login_required
+def updateblog(blog_id):
+    blog = Blog.query.get(blog_id)
+    if blog.user != current_user:
+        abort(404)
+    form = CreateBlog()
+    if form.validate_on_submit():
+        blog.title = form.title.data
+        blog.content = form.content.data
+        db.session.commit()
+        flash('Quote Blog Successfully Updated')
+        return redirect(url_for('main.index',id=blog_id))
+    if request.method == 'GET':
+        form.title.data = blog.title
+        form.content.data = blog.content
+    return render_template('new_blog.html',form = form)
