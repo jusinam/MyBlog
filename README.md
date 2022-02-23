@@ -2,7 +2,7 @@
 This is a flask developed personal blogging website that allows registered users to create and share their opinions and other users can read, comment, up-vote and down-vote on them.
 
 ## Author
-* Evans Nyambane
+* Evans Onchagwa
 
 
 ### Blog
@@ -78,7 +78,7 @@ No known bugs
 
 #### Collaborate
 >Incase of any questions, problems or ideas concerning the app, feel free to reach out to me:
->>Github: [Evans Nyambane](https://github.com/DjCooGie)
+>>Github: [Evans Onchagwa](https://github.com/DjCooGie)
 >>Email: evansonchagwa01@gmail.com
 
 #### License
