@@ -2,7 +2,7 @@
 This is a flask developed personal blogging website that allows registered users to create and share their opinions and other users can read, comment, up-vote and down-vote on them.
 
 ## Author
-* Evans Onchagwa
+* Evans ON
 
 
 ### Blog
@@ -44,7 +44,7 @@ This is a flask developed personal blogging website that allows registered users
   Here's a brief intro about what a developer must do in order to start running the app locally:
 
   ```
-  $ git clone https://github.com/DjCooGie/MyBlog.git
+  $ git clone https://github.com/jusinam/MyBlog.git
   $ cd MyBlog/
   ```
   * create a virtual environment
@@ -74,13 +74,12 @@ This is a flask developed personal blogging website that allows registered users
 No known bugs
 
 ## Site Live Link
-[https://evan-blog-ups.herokuapp.com/](https://evan-blog-ups.herokuapp.com/)
+[Click here](https://evan-blog-ups.herokuapp.com/)
 
 #### Collaborate
 >Incase of any questions, problems or ideas concerning the app, feel free to reach out to me:
->>Github: [Evans Onchagwa](https://github.com/DjCooGie)
->>Email: evansonchagwa01@gmail.com
+>>Email: [Send mail](mailto:evansonchagwa01@gmail.com)
 
 #### License
 MIT
-&copy;2020 Evans Onchagwa
+&copy;2020 Evans ON
